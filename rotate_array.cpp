@@ -1,24 +1,13 @@
-#include <bits/stdc++.h>
+//reversal algorithm
+#include <bits/std++.h>
 
 using namespace std;
 
 void rotateArray(vector < int > &nums, int k) {
-	int count, i, elem, temp;
-	count = nums.size();
-	i = 0;
-	elem = nums[0];
-	k = k % nums.size();
-	while ( count != 0) {
-		temp = nums[(i + k) % nums.size()];
-		nums[(i + k) % nums.size()] = elem;
-		elem = temp;
-		i = (i + k) % nums.size();
-		count--;
-	}
+	reverse(nums.begin(), nums.end());
+	reverse(nums.begin(), nums.begin() + k);
+	reverse(nums.begin() + k, nums.end());
 
-	for (int i = 0; i < nums.size(); i++) {
-		printf("%d ", nums[i]); 
-	}
 }
 
 int main()
